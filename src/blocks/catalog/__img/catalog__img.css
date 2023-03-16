@@ -1,0 +1,22 @@
+.catalog__img {
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.15s ease-out 0s;
+  width: 100%;
+  border-radius: 15px;
+}
+.catalog__img:hover {
+  transform: translateY(10px);
+}
+
+@media only screen and (max-width: 768px) {
+  .catalog__img {
+    max-height: 90px;
+  }
+}
+@media only screen and (max-width: 468px) {
+  .catalog__img {
+    max-height: 70px;
+    max-width: 95%;
+  }
+}

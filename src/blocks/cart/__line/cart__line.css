@@ -1,0 +1,34 @@
+.cart__line {
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(auto, 400px) repeat(3, 1fr) minmax(auto, 100px);
+  justify-items: center;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px dashed #9c9c9f75;
+}
+@media screen and (max-width: 930px) {
+  .cart__line {
+    grid-template-columns: minmax(auto, 250px) repeat(3, 1fr) minmax(auto, 30px);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .cart__line {
+    height: auto;
+    grid-template-rows: 1fr;
+    grid-template-areas: 'product price quantity cost trash';
+    padding: 7px 0 5px 0;
+  }
+}
+@media screen and (max-width: 471px) {
+  .cart__line {
+    height: auto;
+    grid-template-columns: 16% 60% 16%;
+    grid-template-rows: 70px 50px;
+    grid-template-areas:
+      'product product trash'
+      'price quantity cost';
+    padding: 7px 0 5px 0;
+  }
+}

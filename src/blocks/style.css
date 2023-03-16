@@ -1,0 +1,49 @@
+@keyframes scaleCart {
+  0% {
+    scale: 1;
+  }
+  5% {
+    scale: 1.1;
+  }
+  10% {
+    scale: 1;
+  }
+  100% {
+    scale: 1;
+  }
+}
+
+
+
+label,
+input,
+span {
+  margin: 0;
+  padding: 0;
+}
+input[type="radio"] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  transition: all 250ms ease 0s;
+}
+input[type="radio"] + span {
+  padding: 10px;
+  line-height: 40px;
+  transition: all 250ms ease 0s;
+}
+input[type="radio"]:hover + span {
+  color: #242427d0;
+  transition: all 250ms ease 0s;
+}
+input[type="radio"]:checked + span {
+  font-weight: 500;
+  box-sizing: border-box;
+  cursor: pointer;
+  background-color: #9c9c9f75;
+  border-radius: 9999px;
+  color: rgb(0, 0, 0);
+  transition: all 250ms ease 0s;
+}

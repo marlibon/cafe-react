@@ -1,0 +1,11 @@
+.popup-product__content {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  height: 340px;
+}
+@media screen and (max-width: 768px) {
+  .popup-product__content {
+    height: auto;
+  }
+}

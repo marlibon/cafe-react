@@ -1,0 +1,8 @@
+.mob-menu__orders {
+    grid-area: orders;
+}
+.mob-menu__orders::after {
+    content: "заказы";
+    display: block;
+    }
+    

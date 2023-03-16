@@ -1,0 +1,15 @@
+.cart__product-weight {
+  margin: 0;
+  padding: 0;
+  grid-area: weight;
+  font-size: 14px;
+  line-height: 12px;
+  align-self: start;
+  justify-self: start;
+  text-align: left;
+}
+@media only screen and (max-width: 768px) {
+  .cart__product-weight {
+    font-size: 12px;
+  }
+}

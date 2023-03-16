@@ -1,0 +1,15 @@
+.popup-product__description {
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  max-width: 410px;
+  grid-area: description;
+  min-height: 240px;
+  -ms-overflow-style: none; /* IE и Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.popup-product__description::-webkit-scrollbar {
+  display: none;
+}

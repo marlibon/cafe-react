@@ -1,0 +1,20 @@
+.product__img {
+  margin: 0px;
+  position: relative;
+  width: 260px;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 12px;
+  top: 0px;
+  transition: top 150ms ease-out 0s; /* анимацию сделать */
+  grid-area: img;
+}
+.product__img:hover {
+  top: 10px;
+}
+@media only screen and (max-width: 600px) {
+  .product__img {
+    height: 90%;
+    width: 90%;
+  }
+}

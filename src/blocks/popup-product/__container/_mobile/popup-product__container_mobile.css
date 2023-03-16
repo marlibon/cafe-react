@@ -1,0 +1,5 @@
+@media only screen and (max-width: 760px) {
+  .popup-product__container_mobile {
+    height: 85%;
+  }
+}

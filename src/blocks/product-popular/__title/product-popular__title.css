@@ -1,0 +1,12 @@
+.product-popular__title {
+    line-height: 18px;
+    font-size: 16px;
+    line-height: 20px;
+    max-height: 40px;
+    width: 100%;
+    color: rgb(0, 0, 0);
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-weight: 400;
+}

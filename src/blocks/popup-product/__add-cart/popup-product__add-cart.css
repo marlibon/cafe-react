@@ -1,0 +1,21 @@
+.popup-product__add-cart {
+  width: 100%;
+  padding: 20px;
+  color: #fff;
+  background-color: #ff6a00cb;
+  border-radius: 20px;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s;
+  grid-area: add-cart;
+}
+
+.popup-product__add-cart:hover {
+  background-color: #ff6a00f3;
+}
+@media only screen and (max-width: 600px) {
+  .popup-product__add-cart {
+    padding: 15px;
+  }
+}

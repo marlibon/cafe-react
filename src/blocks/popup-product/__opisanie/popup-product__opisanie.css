@@ -1,0 +1,14 @@
+.popup-product__opisanie {
+  margin: 0;
+  padding: 0;
+  color: rgb(0, 0, 0);
+  font-size: 14px;
+  line-height: 40px;
+  font-weight: 400;
+  text-align: left;
+}
+@media only screen and (max-width: 768px) {
+  .popup-product__opisanie {
+    font-size: 12px;
+  }
+}

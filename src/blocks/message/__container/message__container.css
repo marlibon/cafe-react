@@ -1,0 +1,26 @@
+.message__container {
+    width: 50%;
+    max-width: 1150px;
+    z-index: 999;
+    text-align: center;
+    padding: 30px;
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 30px 60px;
+    box-sizing: border-box;
+    background: rgb(255, 255, 255);
+    border-radius: 20px;
+    transition: opacity 150ms ease 0s, transform;
+    position: relative;
+    cursor: default;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    max-height: 85%;
+  }
+  @media screen and (max-width: 768px) {
+    .message__container {
+      width: 95%;
+      padding: 15px;
+    }
+  }
+  

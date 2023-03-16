@@ -1,0 +1,11 @@
+.popup-product__supplements {
+  align-items: center;
+  display: grid;
+  /* flex-wrap: wrap; */
+  /* justify-content: center; */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 5px;
+}

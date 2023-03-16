@@ -1,0 +1,17 @@
+.cart__product-description {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    width: 100%;
+    font-size: 14px;
+    line-height: 18px;
+    color: rgb(92, 99, 112);
+    font-weight: 400;
+    max-height: 35px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-area: description;
+}

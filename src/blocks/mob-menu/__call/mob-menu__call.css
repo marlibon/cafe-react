@@ -1,0 +1,9 @@
+.mob-menu__call {
+  grid-area: call;
+  text-decoration: none;
+}
+.mob-menu__call::after {
+  content: "позвонить";
+  display: block;
+  }
+  

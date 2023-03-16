@@ -1,0 +1,14 @@
+.supplement {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  border-radius: 10px;
+  width: auto;
+  height: 150px;
+  box-sizing: border-box;
+  cursor: pointer;
+  box-shadow: rgba(6, 5, 50, 0.12) 0px 4px 20px;
+  transition: box-shadow 150ms ease-out 0s, border;
+}

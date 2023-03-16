@@ -1,0 +1,5 @@
+.product-popular__slider {
+  display: flex;
+  overflow: hidden;
+  position: relative;
+}

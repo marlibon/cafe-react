@@ -1,0 +1,9 @@
+.supplement__title {
+  font-size: 12px;
+  line-height: 16px;
+  height: 32px;
+  flex: 1 0 auto;
+  margin: 0px;
+  overflow: hidden;
+  font-weight: 400;
+}

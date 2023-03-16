@@ -1,0 +1,15 @@
+.quantity__btn {
+    margin: 0;
+    padding: 0;
+    height: 42px;
+    width: 42px;
+    font-size: 30px;
+    font-weight: 400;
+    background-color: #f3f3f7;
+    border: none;
+    transition: 0.2s all;
+    cursor: pointer;
+}
+.quantity__btn:hover {
+    background-color: #d4d4dd;
+}

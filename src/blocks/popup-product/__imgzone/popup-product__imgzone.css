@@ -1,0 +1,12 @@
+.popup-product__imgzone {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  grid-area: img;
+}
+@media screen and (max-width: 768px) {
+  .popup-product__imgzone {
+    display: none;
+  }
+}

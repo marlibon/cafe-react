@@ -1,0 +1,15 @@
+.footer__link {
+    color:rgb(255, 255, 255);
+    font-size: 23px;
+    line-height: 1.2;
+    margin-top: 9px;
+    white-space: normal;
+    display: inline-block;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    cursor: pointer;
+    opacity: 0.7;
+}
+.footer__link:hover {
+    opacity: 1;
+}

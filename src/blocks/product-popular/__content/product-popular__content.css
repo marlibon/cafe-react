@@ -1,0 +1,8 @@
+.product-popular__content {
+    flex: 1 1 auto;
+    display: flex;
+    flex-flow: column;
+    -webkit-box-pack: center;
+    justify-content: center;
+    margin-left: 8px;
+}

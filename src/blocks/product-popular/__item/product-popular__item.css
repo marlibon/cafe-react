@@ -1,0 +1,23 @@
+.product-popular__item {
+  list-style: none;
+  background: rgb(255, 255, 255);
+  transition: box-shadow 150ms ease-out 0s;
+  box-shadow: #ffe600 0px 4px 12px -6px;
+  border-radius: 12px;
+  display: flex;
+  flex: 0 0 auto;
+  cursor: pointer;
+  width: 240px;
+  padding: 4px;
+  margin: 0 24px 12px 0;
+  transition: all 0.1s;
+}
+.product-popular__item:hover {
+  box-shadow: #eed603 0px 6px 22px -6px;
+  scale: 1.1;
+}
+@media only screen and (max-width: 768px) {
+  .product-popular__item {
+    scroll-snap-align: start;
+  }
+}

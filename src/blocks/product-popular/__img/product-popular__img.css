@@ -1,0 +1,9 @@
+.product-popular__img {
+  width: 80px;
+  height: 80px;
+  flex: 0 0 auto;
+  pointer-events: none;
+  position: relative;
+  object-fit: cover;
+  border-radius: 10px;
+}

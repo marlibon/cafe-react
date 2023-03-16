@@ -1,0 +1,29 @@
+.popup-product__img {
+  width: 360px;
+  height: 360px;
+  object-fit: cover;
+  padding: 20px;
+  transition: all 0.5s;
+  border-radius: 30px;
+}
+@media screen and (max-width: 950px) {
+  .popup-product__img {
+    width: 320px;
+    height: 320px;
+    padding: 10px;
+    border-radius: 20px;
+  }
+}
+@media screen and (max-width: 850px) {
+  .popup-product__img {
+    width: 250px;
+    height: 250px;
+    padding: 8px;
+    border-radius: 10px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .popup-product__img {
+    display: none;
+  }
+}

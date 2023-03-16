@@ -1,0 +1,17 @@
+.cart__product-text_cost {
+}
+@media only screen and (max-width: 768px) {
+  .cart__product-text_cost {
+    font-size: 14px;
+    line-height: 14px;
+    font-weight: 400;
+    grid-area: cost;
+    padding: 0 5px 0 5px;
+    white-space: nowrap;
+  }
+  .cart__product-text_cost::after {
+    content: " ₽";
+    font-size: 10px;
+    font-weight: 200;
+  }
+}

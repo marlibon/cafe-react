@@ -1,0 +1,7 @@
+.form__textarea {
+min-height: 80px;
+font-size: 14px;
+line-height: 16px;
+text-align: start;
+border: 1px solid #00000040;
+}

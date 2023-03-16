@@ -1,0 +1,29 @@
+.product__description {
+  margin: 0;
+  text-align: center;
+  width: 100%;
+  font-size: 14px;
+  line-height: 18px;
+  color: rgb(92, 99, 112);
+  font-weight: 400;
+  min-height: 55px;
+  max-height: 55px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  justify-content: center;
+  align-items: flex-start;
+  grid-area: description;
+}
+
+@media only screen and (max-width: 768px) {
+  .product__description {
+    overflow: visible;
+    height: auto;
+    min-height: auto;
+    max-height: 100%;
+    text-align: left;
+    font-size: 12px;
+    line-height: 14px;
+    justify-content: flex-start;
+  }
+}

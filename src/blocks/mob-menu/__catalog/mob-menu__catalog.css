@@ -1,0 +1,7 @@
+.mob-menu__catalog {
+  grid-area: catalog;
+  text-decoration: none;
+}
+.mob-menu__catalog::after {
+  content: "каталог";
+}

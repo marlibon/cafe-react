@@ -1,0 +1,11 @@
+.cart__table {
+max-height: 70vh;
+overflow: auto;
+position: relative;
+display: inline-block;
+vertical-align: top;
+max-width: 100%;
+overflow-x: auto;
+width: 100%;
+
+}

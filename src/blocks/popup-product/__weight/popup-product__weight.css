@@ -1,0 +1,15 @@
+.popup-product__weight {
+  margin: 0;
+  padding: 0;
+  color: rgb(92, 99, 112);
+  font-size: 18px;
+  line-height: 18px;
+}
+@media screen and (max-height: 560px) {
+  .popup-product__weight {
+    margin: 5.5vw 0 5.5vw 0;
+    line-height: 3.5vw;
+    font-size: 14px;
+    font-size: 3.5vw;
+  }
+}

@@ -1,0 +1,12 @@
+.input-radio {
+    border-radius: 20px;
+    background-color: rgb(243, 243, 247);
+    width: 100%;
+    display: none;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    margin: 8px 0px;
+    cursor: pointer;
+  }
+  

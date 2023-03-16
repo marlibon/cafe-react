@@ -1,0 +1,9 @@
+.mob-menu__cart {
+    grid-area: cart;
+    position: relative;
+}
+.mob-menu__cart::after {
+    content: "корзина";
+    display: block;
+    }
+    

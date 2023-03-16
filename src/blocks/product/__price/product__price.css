@@ -1,0 +1,9 @@
+.product__price {
+  font-size: 16px;
+  font-weight: 500;
+}
+@media only screen and (max-width: 600px) {
+  .product__price {
+    font-size: 14px;
+  }
+}

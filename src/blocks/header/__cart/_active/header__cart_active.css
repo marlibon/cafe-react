@@ -1,0 +1,11 @@
+.header__cart_active {
+    opacity: 1; 
+    width: 228px;
+    height: 54px;
+}
+
+@media only screen and (max-width: 768px) {
+    .header__cart_active {
+      width: auto;
+    }
+  }

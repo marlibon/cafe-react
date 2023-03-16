@@ -1,0 +1,8 @@
+.form__submit-btn_color_white {
+  background-color: #ffffff;;
+  color: #000;
+  border: 1px solid rgba(0, 0, 0, 0.301);
+}
+.form__submit-btn_color_white:hover {
+  border: 1px solid rgb(0, 0, 0);
+}

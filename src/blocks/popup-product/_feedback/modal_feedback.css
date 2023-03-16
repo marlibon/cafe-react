@@ -1,0 +1,5 @@
+.modal_feedback {
+    flex-direction: column;
+    max-width: 40%;
+    min-width: 300px;
+}

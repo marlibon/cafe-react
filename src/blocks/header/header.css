@@ -1,0 +1,38 @@
+.header {
+  background-color: white;
+  align-items: center;
+  display: grid;
+  gap: 10px 10px;
+  grid-template-areas:
+    'logo info work-time phone phone'
+    'logo info work-time cart cart';
+  grid-template-columns:
+    120px minmax(auto, 400px)
+    minmax(auto, 200px) auto minmax(min-content, 300px);
+  grid-template-rows: auto auto;
+  margin: 0 auto;
+  padding: 20px 0 20px;
+  /* position: sticky; */
+  top: 0px;
+  z-index: 99;
+  box-shadow: 0 4px 12px -6px #ffe6003b;
+}
+@media only screen and (max-width: 900px) {
+  .header {
+    padding: 20px 0 50px 0;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .header {
+    width: 100%;
+    background-color: black;
+    color: white;
+    padding: 5px 0 5px 0;
+    justify-content: flex-start;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+    gap: 5px 10px;
+    grid-template-areas: 'logo info ';
+    position: relative;
+  }
+}

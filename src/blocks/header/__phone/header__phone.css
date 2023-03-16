@@ -1,0 +1,39 @@
+.header__phone {
+  display: block;
+  padding-left: 35px;
+  position: relative;
+  font-size: 26px;
+  color: #434343;
+  text-decoration: none;
+  font-weight: 600;
+  grid-area: phone;
+  justify-self: end;
+}
+.header__phone:before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 0;
+  background-image: url(../../../images/phone-icon.svg);
+  width: 26px;
+  height: 26px;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.header__phone:hover {
+  border-radius: 15px;
+  box-shadow: #ffe600 0px 4px 12px -6px;
+}
+@media only screen and (max-width: 768px) {
+  .header__phone {
+    display: none;
+    margin-left: 0px;
+    font-size: 18px;
+    font-weight: 500;
+    padding-left: 0px;
+    color: white;
+  }
+  .header__phone:before {
+    background-image: none;
+  }
+}

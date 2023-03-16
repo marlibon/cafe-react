@@ -1,0 +1,22 @@
+.mob-menu__cart-quantity {
+    font-size: 16px;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    color: #fff;
+    background-color: #fd0505;
+    position: absolute;
+    top: -6px;
+    right: 20%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    animation: scaleCart 5s linear 3s infinite;
+}
+@media only screen and (max-width: 550px) {
+    .mob-menu__cart-quantity {
+        right: 2px;
+    }
+  }
+  

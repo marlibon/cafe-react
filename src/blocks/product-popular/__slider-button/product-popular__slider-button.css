@@ -1,0 +1,42 @@
+.product-popular__slider-button {
+    position: absolute;
+    top: 20%;
+    display: block;
+    z-index: 10;
+    background-color: #fff;
+    opacity: 0.5;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: none;
+}
+.product-popular__slider-button:hover {
+    opacity: 0.9;
+    scale: 1.1;
+    border: 1px solid black;
+
+}
+
+.product-popular__slider-button-img {
+    width: 30px;
+    height: 30px;
+;
+}
+.product-popular__slider-button-prev {
+    left: 0;
+    display: none;
+}
+.product-popular__slider-button-next {
+    right: 0;
+}
+
+@media only screen and (max-width: 768px) {
+    .product-popular__slider-button {
+    /* display: none;*/
+    }
+  }
+  

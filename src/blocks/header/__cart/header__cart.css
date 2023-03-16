@@ -1,0 +1,31 @@
+.header__cart {
+  margin: 0;
+  padding: 0;
+  height: 90%;
+  background-color: #ffe600;
+  border-radius: 15px;
+  border: 3px dotted #c5b30c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-self: flex-end;
+  position: relative;
+  cursor: pointer;
+  opacity: 0.4;
+  cursor: pointer;
+  z-index: 99;
+  grid-area: cart;
+  width: 250px;
+  transition: all 150ms ease;
+}
+.header__cart:hover {
+  border: 3px dotted #b9a700;
+  box-shadow: 0 4px 12px -6px #ffe600;
+  opacity: 1;
+
+}
+@media only screen and (max-width: 768px) {
+  .header__cart {
+    display: none;
+  }
+}

@@ -1,0 +1,50 @@
+.header__cart-link {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    font-weight: 800;
+    font-size: 24px;
+    color: black;
+    text-decoration: none;
+    text-transform: uppercase;
+    background-color: inherit;
+    border: none;
+    cursor: pointer;
+}
+.header__cart-link::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: -40px;
+    background-image: url(../../../images/cart-icon.svg);
+    width: 26px;
+    height: 26px;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+}
+.header__cart-link::after {
+    content: "корзина";
+
+}
+@media only screen and (max-width: 768px) {
+    .header__cart-link:hover {
+        text-decoration: underline;
+    }
+    .header__cart-link::after {
+        content: "";
+    
+    }
+    .header__cart-link::before {
+        content: "";
+        transform: translate(100%, -50%);
+        background-image: url(../../../images/cart-icon.svg);
+        width: 26px;
+        height: 26px;
+        background-repeat: no-repeat;
+        background-size: contain;
+    
+    }
+    
+    
+    }

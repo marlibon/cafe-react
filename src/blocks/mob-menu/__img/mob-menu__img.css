@@ -1,0 +1,9 @@
+.mob-menu__img {
+  width: 100%;
+  max-width: 72px;
+  height: auto;
+}
+.mob-menu__img:hover, .mob-menu__img:active {
+  animation: logo_rotate 0.2s linear;
+  
+}

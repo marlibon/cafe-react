@@ -1,0 +1,17 @@
+.catalog__item-title {
+  font-weight: 500;
+  margin: 0;
+  padding: 0;
+}
+@media only screen and (max-width: 768px) {
+  .catalog__item-title {
+    font-size: 16px;
+    font-weight: 400;
+  }
+}
+
+@media only screen and (max-width: 468px) {
+  .catalog__item-title {
+    font-size: 10px;
+  }
+}

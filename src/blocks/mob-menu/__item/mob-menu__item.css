@@ -1,0 +1,17 @@
+.mob-menu__item {
+  font-size: 12px;
+  line-height: 14px;
+  background-color: white;
+  width: 100%;
+  color: rgb(0, 0, 0);
+  border: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.mob-menu__item:hover {
+  transform: translateY(-5%);
+}

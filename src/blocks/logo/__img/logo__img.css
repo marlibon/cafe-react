@@ -1,0 +1,31 @@
+@keyframes logo_rotate {
+    0% {
+        transform: scale(1) rotate(0deg);
+       }
+    50% {
+        transform: scale(1.1) rotate(180deg);
+    }
+    
+    100% {
+        transform: scale(1) rotate(360deg);
+       }
+}
+
+.logo__img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+
+}
+.logo__img:hover, .logo__img:active {
+    animation: logo_rotate 0.3s linear;
+    box-shadow: 1px 1px 1px #434343;
+}
+@media only screen and (max-width: 768px) {
+    .logo__img {
+        width: 50px;
+        height: 50px;
+        animation: none;
+
+        }
+}

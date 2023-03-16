@@ -1,0 +1,22 @@
+.header__cart-quantity {
+  font-size: 20px;
+  text-align: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  color: #fff;
+  background-color: #fd0505;
+  position: absolute;
+  top: -6px;
+  right: 22px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  animation: scaleCart 5s linear 3s infinite;
+
+}
+@media only screen and (max-width: 768px) {
+  .header__cart-quantity {
+    right: 2px;
+  }
+}

@@ -1,0 +1,19 @@
+.order__item {
+  width: 100%;
+  padding: 5px 0 5px;
+  margin: 3px 0 3px;
+  background-color: #00000005;
+  border-bottom: 1px dotted #0000009f;
+}
+.order__item:hover {
+  background-color: #0000000e;
+}
+@media only screen and (max-width: 600px) {
+  .order__item {
+    font-size: 12px;
+    line-height: 14px;
+    padding: 0;
+    border-bottom: none;
+  
+  }
+}

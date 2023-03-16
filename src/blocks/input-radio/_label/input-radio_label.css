@@ -1,0 +1,14 @@
+.input-radio_label {
+    box-sizing: border-box;
+    border-radius: 9999px;
+    color: rgb(0, 0, 0);
+    font-size: 18px;
+    transition: color 150ms ease 0s;
+    cursor: pointer;
+  }
+  @media only screen and (max-width: 600px) {
+    .input-radio_label {
+      font-size: 14px;
+    }
+  }
+  

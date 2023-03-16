@@ -1,0 +1,11 @@
+.footer {
+    margin-top: 100px;
+    height: 300px;
+    width: 100%;
+    background-color: black;
+}
+@media only screen and (max-width: 768px) {
+    .footer {
+        display: none;
+    }
+  }

@@ -1,0 +1,30 @@
+.product {
+    width: 260px;
+    display: flex;
+    justify-content: flex-start;
+    flex-flow: column;
+    align-items: center;
+    padding: 0 15px 15px 15px;
+    cursor: pointer;
+    margin-bottom: 15px;
+    transition: all .2s;
+    box-shadow: #a5960c70 0px 4px 12px -6px;
+
+}
+.product:hover {
+    box-shadow: #aa9a06 4px 4px 12px -6px;
+}
+@media only screen and (max-width: 600px) {
+    .product {
+        width: 100%;
+        padding: 0;
+        display: grid;
+        grid-template-columns: 38% 62%;
+        grid-template-rows: repeat(3, auto);
+        grid-template-areas: 
+        "img title"
+        "img description"
+        "img cost-and-button"
+        ;
+  }
+}

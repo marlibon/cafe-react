@@ -1,0 +1,31 @@
+.popup__close {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  fill: #fff;
+  cursor: pointer;
+  transition: scale 0.3s;
+}
+.popup__close:hover {
+  scale: 1.2;
+}
+@media (max-width: 768px) {
+  .popup__close {
+    top: -40px;
+    right: 0px;
+  }
+  .popup__close::after {
+    content: "✖";
+
+    top: -40px;
+    right: 0px;
+  }
+}
+@media screen and (max-height: 481px) {
+  .popup__close {
+    top: -30px;
+    scale: 0.7;
+  }
+}

@@ -1,0 +1,18 @@
+.popup-product__cross {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    fill: #fff;
+    cursor: pointer;
+    transition: scale 0.3s;
+ }
+ .popup-product__cross:hover {
+   scale: 1.2;
+ }
+ @media (max-width: 768px) {
+   .popup-product__cross {
+      top: 0;
+   }
+  }
