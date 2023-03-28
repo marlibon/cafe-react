@@ -4,10 +4,10 @@ import getMinCost from "../utils/getMinCostProduct"
 
 const ProductItem = ({ id, cost, title, img, description, properties }) => {
     const navigate = useNavigate()
-    const minCost = getMinCost({ cost, properties })
+    const minCost = getMinCost({ cost, properties }, "от ")
 
     function handleClick () {
-        navigate(`product/${id}`, { replace: true })
+        navigate(`product/${id}`, { replace: false })
     }
 
     return (

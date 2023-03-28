@@ -1,6 +1,6 @@
 .supplement__img {
   height: 90px;
-  object-fit: cover;
+  object-fit: contain;
   max-width: 100%;
   overflow: hidden;
 }

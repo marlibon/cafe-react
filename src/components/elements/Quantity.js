@@ -1,5 +1,4 @@
 const Quantity = ({ currentQuantity, onQuantity }) => {
-    console.log(currentQuantity);
     function handleChange (e, increment) {
         e.preventDefault()
         increment ? onQuantity(value => ++value) : onQuantity(value => --value)

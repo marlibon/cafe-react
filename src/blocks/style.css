@@ -13,15 +13,13 @@
   }
 }
 
-
-
 label,
 input,
 span {
   margin: 0;
   padding: 0;
 }
-input[type="radio"] {
+input[type='radio'] {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -29,16 +27,22 @@ input[type="radio"] {
   clip: rect(0 0 0 0);
   transition: all 250ms ease 0s;
 }
-input[type="radio"] + span {
+input[type='radio'] + span {
   padding: 10px;
   line-height: 40px;
   transition: all 250ms ease 0s;
 }
-input[type="radio"]:hover + span {
+@media only screen and (max-width: 368px) {
+  input[type='radio'] + span {
+    padding: 6px;
+  }
+}
+
+input[type='radio']:hover + span {
   color: #242427d0;
   transition: all 250ms ease 0s;
 }
-input[type="radio"]:checked + span {
+input[type='radio']:checked + span {
   font-weight: 500;
   box-sizing: border-box;
   cursor: pointer;

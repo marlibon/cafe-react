@@ -1,10 +1,9 @@
-function getMinCost ({ cost, properties }) {
+function getMinCost ({ cost, properties }, text = "") {
     const arrCost = [];
     if (properties) {
         Object.keys(properties).forEach((item) => {
             arrCost.push(properties[item].cost);
         });
-        const text = "от ";
         return `${text}${Math.min(...arrCost)}`;
     } else {
         return cost;

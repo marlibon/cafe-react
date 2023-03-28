@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 const CloseButton = () => {
     const navigate = useNavigate();
     function handleClick () {
-        navigate(`/`, { replace: true })
+        navigate(`/`, { replace: false })
     }
     return (
         <img

@@ -6,7 +6,7 @@ const Popup = ({ name, children }) => {
 
     useEffect(() => {
         function handleKeyEsc (e) {
-            e.key === 'Escape' && navigate('/', { replace: true });
+            e.key === 'Escape' && navigate('/', { replace: false });
         }
         document.addEventListener('keydown', handleKeyEsc);
 
@@ -14,7 +14,7 @@ const Popup = ({ name, children }) => {
     }, [])
 
     function handleClickByOverlay (e) {
-        e.currentTarget === e.target && navigate('/', { replace: true });
+        e.currentTarget === e.target && navigate('/', { replace: false });
     }
     return (
         <section className={`popup ${name} popup_opened`} onClick={handleClickByOverlay}>

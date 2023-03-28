@@ -31,7 +31,7 @@ const ProductPopular = () => {
         countItem < 0 && setCountItem(itemsListRef.current.length);
     }
     function handleClick (id) {
-        navigate(`product/${id}`, { replace: true })
+        navigate(`product/${id}`, { replace: false })
     }
 
     return (
