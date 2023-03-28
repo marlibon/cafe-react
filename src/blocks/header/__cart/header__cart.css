@@ -17,12 +17,12 @@
   grid-area: cart;
   width: 250px;
   transition: all 150ms ease;
+  text-decoration: none;
 }
 .header__cart:hover {
   border: 3px dotted #b9a700;
   box-shadow: 0 4px 12px -6px #ffe600;
   opacity: 1;
-
 }
 @media only screen and (max-width: 768px) {
   .header__cart {

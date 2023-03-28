@@ -1,8 +1,9 @@
-import imageMobMenuCatalog from '../../images/mob-menu-catalog.png'
-import imageMobMenuCall from '../../images/mob-menu-call.png'
-import imageMobMenuLogo from '../../images/logo__img.png'
-import imageMobMenuCart from '../../images/mob-menu-cart.png'
-import imageMobMenuOrders from '../../images/mob-menu-orders.png'
+import imageMobMenuCatalog from '../images/mob-menu-catalog.png'
+import imageMobMenuCall from '../images/mob-menu-call.png'
+import imageMobMenuLogo from '../images/logo__img.png'
+import imageMobMenuCart from '../images/mob-menu-cart.png'
+import imageMobMenuOrders from '../images/mob-menu-orders.png'
+import { NavLink } from 'react-router-dom'
 
 const MobMenu = () => {
     return (
@@ -32,14 +33,14 @@ const MobMenu = () => {
                     className="mob-menu__img"
                 />
             </button>
-            <button type="button" className="mob-menu__item mob-menu__cart">
+            <NavLink to="/cart" className="mob-menu__item mob-menu__cart">
                 <img
                     className="mob-menu__item-img"
                     src={imageMobMenuCart}
                     alt="корзина"
                 />
                 <span className="mob-menu__cart-quantity cart_quantity" />
-            </button>
+            </NavLink>
             <button type="button" className="mob-menu__item mob-menu__orders">
                 <img
                     className="mob-menu__item-img"

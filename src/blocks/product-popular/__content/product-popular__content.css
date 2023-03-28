@@ -1,8 +1,13 @@
 .product-popular__content {
-    flex: 1 1 auto;
-    display: flex;
-    flex-flow: column;
-    -webkit-box-pack: center;
-    justify-content: center;
-    margin-left: 8px;
+  flex: 1 1 auto;
+  display: flex;
+  flex-flow: column;
+  -webkit-box-pack: center;
+  justify-content: center;
+  margin-left: 8px;
+}
+@media screen and (max-width: 471px) {
+  .product-popular__content {
+    overflow: hidden;
+  }
 }
