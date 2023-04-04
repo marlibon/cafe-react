@@ -6,11 +6,13 @@ import { CartContext } from "../../contexts/CartContext";
 import { useContext, useEffect, useState } from "react";
 import { countQuantity, countCost } from "../../utils/cartFunc";
 import ProductItemTableView from "../elements/ProductItemTableView";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const PopupCart = () => {
     const { cart, setCart } = useContext(CartContext)
     const [quantityAll, setQuantityAll] = useState(0);
     const [costAll, setCostAll] = useState(0);
+    const navigate = useNavigate();
 
     useEffect(() => {
         setQuantityAll(countQuantity(cart))
@@ -29,6 +31,10 @@ const PopupCart = () => {
     function handleDelete (delProduct) {
         const newCart = cart.filter((item) => item.id !== delProduct.id || item.weight !== delProduct.weight)
         setCart(newCart);
+    }
+    function onClickButtonOrder () {
+        navigate("/order", { replace: false });
+
     }
     return (
         <Popup name="popup-cart" classNameContainer="cart__container" navigateOnClose="/">
@@ -60,7 +66,7 @@ const PopupCart = () => {
                             <button type="reset" className="cart__clear-btn" onClick={handleClearCart}>
                                 Очистить
                             </button>
-                            <button type="submit" className="cart__order-btn">
+                            <button type="submit" className="cart__order-btn" onClick={onClickButtonOrder}>
                                 Оформить
                             </button>
                         </summary>
