@@ -1,4 +1,4 @@
-.product-popular__container {
+.slider__container {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -9,10 +9,10 @@
   scroll-snap-type: x mandatory;
 }
 @media only screen and (max-width: 600px) {
-  .product-popular__container {
+  .slider__container {
     overflow-x: auto;
   }
-  .product-popular__container::-webkit-scrollbar {
+  .slider__container::-webkit-scrollbar {
     height: 0;
   }
 }

@@ -7,5 +7,6 @@
 @media screen and (max-width: 768px) {
   .popup-product__content {
     height: auto;
+    width: 100%;
   }
 }

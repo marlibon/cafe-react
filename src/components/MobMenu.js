@@ -4,8 +4,14 @@ import imageMobMenuLogo from '../images/logo__img.png'
 import imageMobMenuCart from '../images/mob-menu-cart.png'
 import imageMobMenuOrders from '../images/mob-menu-orders.png'
 import { NavLink } from 'react-router-dom'
+import { CartContext } from "../contexts/CartContext";
+import { useContext } from "react";
+import { countQuantity } from "../utils/cartFunc";
 
 const MobMenu = () => {
+    const { cart } = useContext(CartContext)
+    const quantity = countQuantity(cart);
+
     return (
         <nav className="mob-menu">
             <a href="#catalog" className="mob-menu__item mob-menu__catalog">
@@ -26,20 +32,20 @@ const MobMenu = () => {
                     alt="позвонить"
                 />
             </a>
-            <button type="button" className="mob-menu__contacts">
+            <NavLink to="/contacts" className="mob-menu__contacts">
                 <img
                     src={imageMobMenuLogo}
                     alt="контакты"
                     className="mob-menu__img"
                 />
-            </button>
+            </NavLink>
             <NavLink to="/cart" className="mob-menu__item mob-menu__cart">
                 <img
                     className="mob-menu__item-img"
                     src={imageMobMenuCart}
                     alt="корзина"
                 />
-                <span className="mob-menu__cart-quantity cart_quantity" />
+                {quantity ? (<span className="mob-menu__cart-quantity">{quantity}</span>) : ''}
             </NavLink>
             <button type="button" className="mob-menu__item mob-menu__orders">
                 <img

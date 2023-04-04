@@ -1,51 +1,75 @@
 import CloseButton from "./CloseButton";
 import Popup from "./Popup";
 import imageCartEmpty from "../../images/cart_empty.png";
+import useSetTitle from "../../hooks/useSetTitle";
+import { CartContext } from "../../contexts/CartContext";
+import { useContext, useEffect, useState } from "react";
+import { countQuantity, countCost } from "../../utils/cartFunc";
+import ProductItemTableView from "../elements/ProductItemTableView";
 
 const PopupCart = () => {
-    const products = false
+    const { cart, setCart } = useContext(CartContext)
+    const [quantityAll, setQuantityAll] = useState(0);
+    const [costAll, setCostAll] = useState(0);
+
+    useEffect(() => {
+        setQuantityAll(countQuantity(cart))
+        setCostAll(countCost(cart))
+    }, [cart])
+
+    useSetTitle('Корзина');
+
+    function handleClearCart () {
+        setCart([])
+        localStorage.removeItem("cart");
+    }
+    function handleQuantity (newProduct) {
+        setCart((state) => state.map((old) => old.id === newProduct.id && old.weight === newProduct.weight ? newProduct : old));
+    }
+    function handleDelete (delProduct) {
+        const newCart = cart.filter((item) => item.id !== delProduct.id || item.weight !== delProduct.weight)
+        setCart(newCart);
+    }
     return (
-        <Popup name="popup-cart">
-            <div className="cart__container">
-                <CloseButton />
-                <div className="cart">
-                    {products && (
-                        <>
-                            <h3 className="cart__title">Ваша корзина</h3>
-                            <article className="cart__line cart__line_main">
-                                <p className="cart__product-text cart__product-text_small">товар</p>
-                                <p className="cart__product-text cart__product-text_small">
-                                    цена за ед.
-                                </p>
-                                <p className="cart__product-text cart__product-text_small">
-                                    количество
-                                </p>
-                                <p className="cart__product-text cart__product-text_small">
-                                    стоимость
-                                </p>
-                                <p className="cart__product-text cart__product-text_small">удалить</p>
-                            </article>
-                            <div className="cart__table"></div>
-                            <summary className="cart__line cart__line_total">
-                                <p className="cart__product-text cart__product-text_small ">
-                                    всего на сумму:
-                                </p>
-                                <p className="cart__product-text cart__product-text_big">0 руб.</p>
-                                <button type="reset" className="cart__clear-btn">
-                                    Очистить
-                                </button>
-                                <button type="submit" className="cart__order-btn">
-                                    Оформить
-                                </button>
-                            </summary>
-                        </>
-                    )}
-                    {!products && (<img
-                        src={imageCartEmpty}
-                        alt="в вашей корзине нет товаров"
-                        className="cart__empty"
-                    />)}
-                </div>
+        <Popup name="popup-cart" classNameContainer="cart__container" navigateOnClose="/">
+            <div className="cart">
+                {quantityAll ? (
+                    <>
+                        <h3 className="cart__title">{`Ваша корзина (${quantityAll})`}</h3>
+                        <article className="cart__line cart__line_main">
+                            <p className="cart__product-text cart__product-text_small">товар</p>
+                            <p className="cart__product-text cart__product-text_small">
+                                цена за ед.
+                            </p>
+                            <p className="cart__product-text cart__product-text_small">
+                                количество
+                            </p>
+                            <p className="cart__product-text cart__product-text_small">
+                                стоимость
+                            </p>
+                            <p className="cart__product-text cart__product-text_small">удалить</p>
+                        </article>
+                        <div className="cart__table">
+                            {cart.map((item, index) => <ProductItemTableView product={item} onQuantity={handleQuantity} onDelete={handleDelete} key={index} />)}
+                        </div>
+                        <summary className="cart__line cart__line_total">
+                            <p className="cart__product-text cart__product-text_small ">
+                                всего на сумму:
+                            </p>
+                            <p className="cart__product-text cart__product-text_big">{costAll} руб.</p>
+                            <button type="reset" className="cart__clear-btn" onClick={handleClearCart}>
+                                Очистить
+                            </button>
+                            <button type="submit" className="cart__order-btn">
+                                Оформить
+                            </button>
+                        </summary>
+                    </>
+                ) : (<img
+                    src={imageCartEmpty}
+                    alt="в вашей корзине нет товаров"
+                    className="cart__empty"
+                />)}
             </div>
         </Popup>
     )

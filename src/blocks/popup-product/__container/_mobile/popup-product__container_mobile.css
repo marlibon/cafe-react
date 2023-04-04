@@ -1,5 +1,5 @@
-@media only screen and (max-width: 760px) {
+@media only screen and (max-width: 768px) {
   .popup-product__container_mobile {
-    height: 85%;
+    height: 100%;
   }
 }

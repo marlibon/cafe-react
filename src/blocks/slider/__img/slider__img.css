@@ -1,0 +1,9 @@
+.slider__img {
+  width: 100%;
+  height: 100%;
+  flex: 0 0 auto;
+  pointer-events: none;
+  position: relative;
+  object-fit: cover;
+  border-radius: 10px;
+}

@@ -1,4 +1,4 @@
-const Quantity = ({ currentQuantity, onQuantity }) => {
+const Quantity = ({ afterText, currentQuantity, onQuantity }) => {
     function handleChange (e, increment) {
         e.preventDefault()
         increment ? onQuantity(value => ++value) : onQuantity(value => --value)
@@ -9,7 +9,7 @@ const Quantity = ({ currentQuantity, onQuantity }) => {
             name="quantity"
             className="popup-product__quantity quantity"
         >
-            <p className="quantity__text">количество: </p>
+            {afterText && (<p className="quantity__text">{afterText}</p>)}
             <button onClick={(e) => handleChange(e, false)} className="quantity__btn quantity__btn_minus" disabled={currentQuantity <= 1}>
                 -
             </button>

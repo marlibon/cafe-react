@@ -9,11 +9,11 @@
   position: absolute;
   top: -6px;
   right: 22px;
-  display: none;
+  display: flex;
   align-items: center;
   justify-content: center;
-  animation: scaleCart 5s linear 3s infinite;
-
+  animation: scaleCart 5s linear 3s
+    infinite;
 }
 @media only screen and (max-width: 768px) {
   .header__cart-quantity {

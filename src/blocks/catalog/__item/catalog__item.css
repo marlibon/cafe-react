@@ -12,6 +12,7 @@
   transition: all 0.15s ease-out 0s;
   width: 250px;
   border-radius: 10px;
+  cursor: pointer;
 }
 .catalog__item:hover {
   box-shadow: #aa9a06 4px 4px 12px -6px;

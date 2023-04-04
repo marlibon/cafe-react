@@ -1,0 +1,31 @@
+.page__container {
+  width: 90%;
+  /* max-width: 1150px; */
+  z-index: 999;
+  text-align: center;
+  padding: 30px;
+  background-color: #fff;
+  box-shadow: rgb(0 0 0 / 20%) 0px 30px
+    60px;
+  box-sizing: border-box;
+  background: rgb(255, 255, 255);
+  border-radius: 20px;
+  transition: opacity 150ms ease 0s,
+    transform;
+  position: relative;
+  cursor: default;
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  max-height: 85%;
+  display: flex;
+  justify-content: center;
+}
+@media screen and (max-width: 768px) {
+  .page__container {
+    padding: 15px;
+    width: 95%;
+    height: 95%;
+    max-height: none;
+  }
+}

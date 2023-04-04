@@ -6,7 +6,7 @@ const SupplementList = ({ supplements, toggleSupplement }) => {
         <>
             <h3 className="product__title">Вкусные добавки:</h3>
             <ul className="popup-product__supplements">
-                {productsList.map((item) => <SupplementItem props={item} toggleSupplement={toggleSupplement} />)}
+                {productsList.map((item) => <SupplementItem key={item.id} props={item} toggleSupplement={toggleSupplement} />)}
 
             </ul>
         </>

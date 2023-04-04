@@ -9,6 +9,7 @@
   white-space: nowrap;
   max-width: 100%;
   grid-area: title;
+  overflow: hidden;
 }
 @media only screen and (max-width: 600px) {
   .product__title {

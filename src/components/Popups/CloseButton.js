@@ -1,18 +1,13 @@
 import buttonCloseImg from '../../images/button-close.svg'
 import { useNavigate } from 'react-router-dom'
 
-const CloseButton = () => {
+const CloseButton = ({ navigateOnClose }) => {
     const navigate = useNavigate();
     function handleClick () {
-        navigate(`/`, { replace: false })
+        navigate(navigateOnClose)
     }
     return (
-        <img
-            src={buttonCloseImg}
-            alt="кнопка закрытия"
-            className="popup__close"
-            onClick={handleClick}
-        />
+        <button className="popup__close" onClick={handleClick} ></button>
     )
 }
 

@@ -3,4 +3,5 @@
   object-fit: contain;
   max-width: 100%;
   overflow: hidden;
+  border-radius: 7px;
 }

@@ -27,15 +27,19 @@
 @import url('../blocks/menu/__link/menu__link.css');
 
 @import url('../blocks/product-popular/product-popular.css');
-@import url('../blocks/product-popular/__container/product-popular__container.css');
 @import url('../blocks/product-popular/__title/product-popular__title.css');
-@import url('../blocks/product-popular/__slider/product-popular__slider.css');
-@import url('../blocks/product-popular/__slider-button/product-popular__slider-button.css');
-@import url('../blocks/product-popular/__item/product-popular__item.css');
 @import url('../blocks/product-popular/__img/product-popular__img.css');
 @import url('../blocks/product-popular/__content/product-popular__content.css');
 @import url('../blocks/product-popular/__title/product-popular__title.css');
 @import url('../blocks/product-popular/__price/product-popular__price.css');
+
+@import url('../blocks/slider/slider.css');
+@import url('../blocks/slider/__container/slider__container.css');
+@import url('../blocks/slider/__item/slider__item.css');
+@import url('../blocks/slider/__button/slider__button.css');
+@import url('../blocks/slider/__img/slider__img.css');
+/*@import url('../blocks/slider');
+@import url('../blocks/slider'); */
 
 @import url('../blocks/products/products.css');
 @import url('../blocks/products/__title/products__title.css');
@@ -164,6 +168,9 @@
 
 @import url('../blocks/page/page.css');
 @import url('../blocks/page/_visibility/page_visibility.css');
+@import url('../blocks/page/__container/page__container.css');
+@import url('../blocks/page/__container/_image/page__container_image.css');
+@import url('../blocks/page/__content-popup/page__content-popup.css');
 
 /*для галочки пользовательского соглашения*/
 .container {

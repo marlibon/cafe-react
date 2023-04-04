@@ -1,4 +1,4 @@
-.product-popular__item {
+.slider__item {
   list-style: none;
   background: rgb(255, 255, 255);
   transition: box-shadow 150ms ease-out
@@ -13,17 +13,17 @@
   margin: 0 24px 12px 0;
   transition: all 0.1s;
 }
-.product-popular__item:hover {
+.slider__item:hover {
   box-shadow: #eed603 0px 6px 22px -6px;
   scale: 1.1;
 }
 @media only screen and (max-width: 768px) {
-  .product-popular__item {
+  .slider__item {
     scroll-snap-align: start;
   }
 }
 @media only screen and (max-width: 471px) {
-  .product-popular__item {
+  .slider__item {
     width: 190px;
   }
 }

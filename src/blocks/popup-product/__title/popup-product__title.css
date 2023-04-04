@@ -5,11 +5,15 @@
   line-height: 28px;
   font-weight: 500;
   grid-area: title;
-  justify-self: start;
 }
 @media screen and (max-height: 560px) {
   .popup-product__title {
     font-size: 14px;
     font-size: 5vw;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .popup-product__title {
+    width: 80%;
   }
 }

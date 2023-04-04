@@ -147,7 +147,8 @@ const data = [
         type: "Миничебуреки 5шт.",
         img: "https://shefcheburek.ru/images/products/9.jpg",
         often: true,
-        properties: null
+        properties: null,
+        supplements: "Соусы",
     },
     {
         id: 10,
@@ -158,7 +159,8 @@ const data = [
         type: "Миничебуреки 5шт.",
         img: "https://shefcheburek.ru/images/products/10.jpg",
         often: false,
-        properties: null
+        properties: null,
+        supplements: "Соусы",
     },
     {
         id: 11,
@@ -169,7 +171,8 @@ const data = [
         type: "Миничебуреки 5шт.",
         img: "https://shefcheburek.ru/images/products/11.jpg",
         often: true,
-        properties: null
+        properties: null,
+        supplements: "Соусы",
     },
     {
         id: 12,
@@ -191,7 +194,8 @@ const data = [
                 cost: "80",
                 weight: "вес: 200 г"
             }
-        }
+        },
+        supplements: "Соусы",
     },
     {
         id: 13,
@@ -202,7 +206,8 @@ const data = [
         type: "Чебуреки с картофелем",
         img: "https://shefcheburek.ru/images/products/13.jpg",
         often: false,
-        properties: null
+        properties: null,
+        supplements: "Соусы",
     },
     {
         id: 14,
@@ -224,7 +229,8 @@ const data = [
         type: "Сладкие чебуреки",
         img: "https://shefcheburek.ru/images/products/15.jpg",
         often: false,
-        properties: null
+        properties: null,
+        supplements: "Горячие напитки",
     },
     {
         id: 16,
@@ -235,7 +241,8 @@ const data = [
         type: "Сладкие чебуреки",
         img: "https://shefcheburek.ru/images/products/16.jpg",
         often: false,
-        properties: null
+        properties: null,
+        supplements: "Горячие напитки",
     },
     {
         id: 17,
@@ -246,7 +253,8 @@ const data = [
         type: "Сладкие чебуреки",
         img: "https://shefcheburek.ru/images/products/17.jpg",
         often: false,
-        properties: null
+        properties: null,
+        supplements: "Горячие напитки",
     },
     {
         id: 18,
@@ -257,7 +265,8 @@ const data = [
         type: "Сладкие чебуреки",
         img: "https://shefcheburek.ru/images/products/18.jpg",
         often: false,
-        properties: null
+        properties: null,
+        supplements: "Горячие напитки",
     },
     {
         id: 19,
@@ -268,7 +277,8 @@ const data = [
         type: "Сладкие чебуреки",
         img: "https://shefcheburek.ru/images/products/19.jpg",
         often: true,
-        properties: null
+        properties: null,
+        supplements: "Горячие напитки",
     },
     {
         id: 20,
@@ -279,7 +289,8 @@ const data = [
         type: "Сладкие чебуреки",
         img: "https://shefcheburek.ru/images/products/20.jpg",
         often: false,
-        properties: null
+        properties: null,
+        supplements: "Горячие напитки",
     },
     {
         id: 21,
@@ -301,7 +312,8 @@ const data = [
                 cost: "120",
                 weight: "вес: 200 г"
             }
-        }
+        },
+        supplements: "Горячие напитки",
     },
     {
         id: 22,
@@ -312,7 +324,8 @@ const data = [
         type: "Чебуреки с сыром",
         img: "https://shefcheburek.ru/images/products/22.jpg",
         often: false,
-        properties: null
+        properties: null,
+        supplements: "Горячие напитки",
     },
     {
         id: 23,
@@ -323,7 +336,8 @@ const data = [
         type: "Чебуреки с сыром",
         img: "https://shefcheburek.ru/images/products/23.jpg",
         often: false,
-        properties: null
+        properties: null,
+        supplements: "Горячие напитки",
     },
     {
         id: 24,
@@ -334,7 +348,8 @@ const data = [
         type: "Чебуреки с сыром",
         img: "https://shefcheburek.ru/images/products/24.jpg",
         often: false,
-        properties: null
+        properties: null,
+        supplements: "Горячие напитки",
     },
     {
         id: 25,
@@ -345,7 +360,8 @@ const data = [
         type: "Чебуреки с сыром",
         img: "https://shefcheburek.ru/images/products/25.jpg",
         often: false,
-        properties: null
+        properties: null,
+        supplements: "Горячие напитки",
     },
     {
         id: 26,
@@ -356,7 +372,8 @@ const data = [
         type: "Чебуреки с сыром",
         img: "https://shefcheburek.ru/images/products/26.jpg",
         often: false,
-        properties: null
+        properties: null,
+        supplements: "Горячие напитки",
     },
     {
         id: 27,
@@ -367,7 +384,8 @@ const data = [
         type: "Чебуреки с сыром",
         img: "https://shefcheburek.ru/images/products/27.jpg",
         often: false,
-        properties: null
+        properties: null,
+        supplements: "Горячие напитки",
     },
     {
         id: 28,
@@ -378,7 +396,8 @@ const data = [
         type: "Чебуреки с сыром",
         img: "https://shefcheburek.ru/images/products/28.jpg",
         often: false,
-        properties: null
+        properties: null,
+        supplements: "Горячие напитки",
     },
     {
         id: 29,
@@ -608,12 +627,12 @@ const data = [
         often: false,
         properties: {
             1: {
-                name: "0,2 л",
+                name: "обычный стакан",
                 cost: "100",
                 weight: "0,2 л"
             },
             2: {
-                name: "0,3 л",
+                name: "большой стакан",
                 cost: "130",
                 weight: "0,3 л"
             }
@@ -631,12 +650,12 @@ const data = [
         often: false,
         properties: {
             1: {
-                name: "0,2 л",
+                name: "обычный стакан",
                 cost: "120",
                 weight: "0,2 л"
             },
             2: {
-                name: "0,3 л",
+                name: "большой стакан",
                 cost: "150",
                 weight: "0,3 л"
             }

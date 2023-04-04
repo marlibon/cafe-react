@@ -5,11 +5,13 @@
   text-align: center;
   padding: 30px;
   background-color: #fff;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 30px 60px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px
+    30px 60px;
   box-sizing: border-box;
   background: rgb(255, 255, 255);
   border-radius: 20px;
-  transition: opacity 150ms ease 0s, transform;
+  transition: opacity 150ms ease 0s,
+    transform;
   position: relative;
   cursor: default;
   display: grid;
@@ -22,13 +24,17 @@
   justify-items: center;
   gap: 10px;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 568px) {
   .popup-product__container {
-    width: 97%;
-    height: auto;
+    max-width: none;
+    border-radius: 0;
+    width: 100%;
+    height: 100%;
     padding: 20px;
     grid-template-columns: 1fr;
-    grid-template-rows: minmax(14px, auto) auto minmax(48px, 58px);
+    grid-template-rows:
+      minmax(14px, auto)
+      auto minmax(48px, 58px);
     grid-template-areas:
       'title'
       'description'

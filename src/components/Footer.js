@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom"
 
 const Footer = () => {
     return (
@@ -16,9 +17,7 @@ const Footer = () => {
                         </a>
                     </li>
                     <li>
-                        <a href="#" className="footer__link">
-                            Контакты
-                        </a>
+                        <NavLink to="/contacts" className="footer__link" >Контакты</NavLink>
                     </li>
                     <li>
                         <a href="#" className="footer__link">
