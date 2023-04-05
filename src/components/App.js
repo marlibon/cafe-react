@@ -55,7 +55,7 @@ function App () {
           <Route exact path="/product/:id" element={<PopupProduct />} />
           <Route exact path="/image/:id" element={<PopupImage />} />
           <Route exact path="/cart" element={<PopupCart />} />
-          <Route exact path="/order" element={<PopupOrder />} />
+          <Route exact path="/order/:block" element={<PopupOrder />} />
           <Route exact path="/added" element={<Added />} />
           <Route exact path="/completed" element={<Completed />} />
           <Route exact path="/failed" element={<Failed />} />

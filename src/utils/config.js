@@ -3,7 +3,7 @@ const config = {
     city: "г.Салават",
     tel: "+7(987)240-15-55",
     operatingMode: {
-        startWorkHour: '17',
+        startWorkHour: '10',
         startWorkMinute: '00',
         endWorkHour: '22',
         endWorkMinute: '00',

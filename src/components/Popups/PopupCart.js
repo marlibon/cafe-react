@@ -33,7 +33,7 @@ const PopupCart = () => {
         setCart(newCart);
     }
     function onClickButtonOrder () {
-        navigate("/order", { replace: false });
+        navigate("/order/user", { replace: false });
 
     }
     return (
