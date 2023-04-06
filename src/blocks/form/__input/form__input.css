@@ -1,6 +1,6 @@
 .form__input {
   width: 100%;
-  margin: 5px 0 5px;
+  margin: 5px 0 8px;
   box-sizing: border-box;
   font-weight: 400;
   font-size: 24px;
@@ -8,7 +8,7 @@
   color: #000;
   border: none;
   border-bottom: 1px solid #00000040;
-  padding-bottom: 9px;
+  padding-bottom: 15px;
   text-align: center;
 }
 .form__input:focus {

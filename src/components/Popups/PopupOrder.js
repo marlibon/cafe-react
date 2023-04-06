@@ -2,16 +2,22 @@ import Popup from "./Popup";
 import { NavLink, useNavigate, useParams } from "react-router-dom";
 import { CartContext } from "../../contexts/CartContext";
 import useSetTitle from "../../hooks/useSetTitle";
-import { useContext, useRef, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import ButtonGoBack from "../elements/ButtonGoBack";
+import ButtonSubmit from "../elements/ButtonSubmit";
+import FormDelivery from "../elements/FormDelivery";
+import FormUser from "../elements/FormUser";
+import OrderTable from "../elements/OrderTable";
 
 const PopupOrder = () => {
     useSetTitle('Оформление заказа');
     const { cart } = useContext(CartContext)
     const params = useParams()
     const block = params?.block;
-    const formUser = useRef();
+
     const navigate = useNavigate();
     const [validFormUser, setValidFormUser] = useState(false)
+    const [delivery, setDelivery] = useState({})
 
     // данные с формы
     const [orderData, setOrderData] = useState({})
@@ -19,18 +25,33 @@ const PopupOrder = () => {
     function validForm (form) {
         if (form.tagName !== 'FORM') return false;
         return ![...form.elements].some(element => element.validity.valid !== true);
-
     }
+    useEffect(() => {
+        console.log(orderData, cart);
 
-    function handleChangeFormUser (e) {
-        console.log(e);
-        setValidFormUser(validForm(formUser.current))
+    }, [orderData, delivery])
+
+
+
+    function handleInput (event) {
+        const name = event.target.name;
+        setOrderData({ ...orderData, [name]: event.target.value })
+    }
+    function saveLocalStorage () {
+        localStorage.setItem('orderData', JSON.stringify(orderData))
     }
     function handleSubmitFormUser (event) {
         event.preventDefault();
-        const name = event.target.id;
-        setOrderData({ ...orderData, [name]: event.target.value })
+        saveLocalStorage();
         navigate('/order/delivery', { replace: false })
+    }
+    function handleSubmitFormDelivery (event) {
+        event.preventDefault();
+        saveLocalStorage();
+        navigate('/order/confirm', { replace: false })
+    }
+    function handleClickNavBack () {
+        navigate(-1)
     }
     return (
         <Popup name="popup-order" classNameContainer="order__container" navigateOnClose="/">
@@ -38,152 +59,21 @@ const PopupOrder = () => {
                 <h3 className="order__title">Оформление заказа</h3>
                 {block === "user" &&
                     (<div className="form_user-block">
-                        <NavLink to="/cart"
-                            className="form__submit-btn form__submit-btn_color_white form_go-cart"
-                        >
-                            ← вернуться в корзину
-                        </NavLink>
-                        <form ref={formUser} name="form_user-block" className="form form_user-block" onChange={handleChangeFormUser} onSubmit={handleSubmitFormUser}>
-                            <input
-                                type="text"
-                                placeholder="Имя"
-                                id="name"
-                                className="form__input form__input_name"
-                                minLength={2}
-                                maxLength={40}
-                                required
-                            />
-                            <span className="form__error name-error" />
-                            <input
-                                placeholder="Телефон"
-                                type="tel"
-                                pattern="[0-9]*"
-                                id="phone"
-                                minLength={11}
-                                maxLength={11}
-                                className="form__input form__input_phone"
-                                required
-                            />
-                            <span className="form__error phone-error" ></span>
-                            <label className="container">
-                                Принимаю{" "}
-                                <a href="/terms" target="_blank">
-                                    Пользовательское соглашение
-                                </a>
-                                <input type="checkbox" defaultChecked="checked" />
-                                <span className="checkmark" />
-                            </label>
-                            <button
-                                type="submit"
-                                name="form__submit"
-                                className={`form__submit-btn form__submit ${!validFormUser && 'form__submit-btn_disable'}`}
-                                disabled={!validFormUser}
-                            >
-                                Далее →
-                            </button>
-                        </form>
+                        <ButtonGoBack onClick={handleClickNavBack} />
+                        <FormUser onSubmit={handleSubmitFormUser} orderData={orderData} onInput={handleInput} onValid={validForm} />
                     </div>)
                 }
                 {block === "delivery" &&
                     (<div className="form_delivery-block">
-                        <button
-                            type="button"
-                            className="form__submit-btn form__submit-btn_color_white form_go-user-block"
-                        >
-                            ← вернуться назад
-                        </button>
-                        <p className="form__description">Сами заберете или нужна доставка?</p>
-                        <form name="sposob" className="input-radio page_visibility">
-                            <label htmlFor="sam" className="input-radio_label">
-                                <input
-                                    type="radio"
-                                    name="sposob"
-                                    id="sam"
-                                    className="input-radio_radio"
-                                    defaultValue="самовывоз"
-                                    required="required"
-                                />
-                                <span className="input-radio_text">самовывоз</span>
-                            </label>
-                            <label htmlFor="city" className="input-radio_label">
-                                <input
-                                    type="radio"
-                                    name="sposob"
-                                    id="city"
-                                    className="input-radio_radio"
-                                    defaultValue="доставка"
-                                    required="required"
-                                />
-                                <span className="input-radio_text">доставка</span>
-                            </label>
-                        </form>
-                        <div
-                            className="form form_delivery-block_filial"
-                            style={{ padding: 0 }}
-                        >
-                            <p className="form__description">По какому адресу заберете?</p>
-                            <form name="filial" className="input-radio page_visibility">
-                                <label htmlFor="ostr" className="input-radio_label">
-                                    <input
-                                        type="radio"
-                                        name="filial"
-                                        id="ostr"
-                                        className="input-radio_radio"
-                                        defaultValue="Островского 26а"
-                                        required="required"
-                                        defaultChecked=""
-                                    />
-                                    <span className="input-radio_text">Островского 26а</span>
-                                </label>
-                                <label htmlFor="lenina" className="input-radio_label">
-                                    <input
-                                        type="radio"
-                                        name="filial"
-                                        id="lenina"
-                                        className="input-radio_radio"
-                                        defaultValue="Ленина 22"
-                                        required="required"
-                                    />
-                                    <span className="input-radio_text">Ленина 22</span>
-                                </label>
-                            </form>
-                        </div>
-                        <form name="address" className="form address">
-                            <div>
-                                <p className="form__description">
-                                    Напишите, пожалуйста, полный адрес
-                                </p>
-                                <input
-                                    placeholder="г.Салават, ул. ..., д. ..., кв. ..."
-                                    type="text"
-                                    id="address"
-                                    minLength={8}
-                                    maxLength={102}
-                                    className="form__input form__input_font_small form__input_address"
-                                    required=""
-                                />
-                                <span className="form__error address-error" />
-                            </div>
-                            <button
-                                type="submit"
-                                name="form__submit"
-                                className="form__submit-btn form__submit"
-                            >
-                                Далее →
-                            </button>
-                        </form>
+                        <ButtonGoBack onClick={handleClickNavBack} />
+                        <FormDelivery onSubmit={handleSubmitFormDelivery} orderData={orderData} onInput={handleInput} onValid={validForm} />
                     </div>)
                 }
                 {block === "confirm" &&
                     (<div className="form_confirm-block">
-                        <button
-                            type="button"
-                            className="form__submit-btn form__submit-btn_color_white form_go-user-block"
-                        >
-                            ← вернуться назад
-                        </button>
+                        <ButtonGoBack onClick={handleClickNavBack} />
                         <p className="form__description">Проверьте заполненные данные</p>
-                        <ul className="order__table"></ul>
+                        <OrderTable orderData={orderData} />
                         <textarea
                             placeholder="Дополнительная информация"
                             type="text"
@@ -193,13 +83,7 @@ const PopupOrder = () => {
                             className="form__input form__textarea form__input_comment"
                             defaultValue={""}
                         />
-                        <button
-                            type="submit"
-                            name="form__submit"
-                            className="form__submit-btn form__submit"
-                        >
-                            Оформить заказ
-                        </button>
+                        <ButtonSubmit text="Оформить заказ" />
                     </div>)
                 }
             </div>
