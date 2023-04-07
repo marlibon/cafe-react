@@ -1,20 +1,19 @@
+import { useState } from "react";
 import ButtonSubmit from "./ButtonSubmit";
 
-const FormConfirm = ({ orderData, costOrder, onSubmit }) => {
-    const { cost, quantity, costDelivery } = costOrder(orderData.sposob);
+const FormConfirm = ({ dataForConfirm, onSubmit }) => {
+    const [valueComment, setValueComment] = useState('')
+    function handleSubmit (e) {
+        e.preventDefault();
+        onSubmit(valueComment)
+    }
     return (
         <>
             <p className="form__description">Проверьте заполненные данные</p>
             <ul className="order__table">
-                <li class="order__item">Имя: {orderData?.userName}</li>
-                <li class="order__item">Телефон: {orderData?.phone}</li>
-                <li class="order__item">Заказ: {`${quantity} шт. за ${cost} ₽`}</li>
-                <li class="order__item">Способ доставки: {orderData?.sposob}</li>
-                {costDelivery !== 0 && (<li class="order__item">Стоимость доставки: {costDelivery}₽</li>)}
-                <li class="order__item">Адрес: {orderData?.address}</li>
-                <li class="order__item">Всего к оплате: {cost + costDelivery}₽</li>
+                {dataForConfirm && dataForConfirm.map((item) => (<li className="order__item" key={item}>{item}</li>))}
             </ul>
-            <form name="delivery" onSubmit={onSubmit}>
+            <form name="delivery" onSubmit={handleSubmit}>
                 <textarea
                     placeholder="Дополнительная информация"
                     type="text"
@@ -22,9 +21,10 @@ const FormConfirm = ({ orderData, costOrder, onSubmit }) => {
                     minLength={8}
                     maxLength={402}
                     className="form__input form__textarea form__input_comment"
-                    defaultValue={""}
+                    value={valueComment}
+                    onChange={(e) => { setValueComment(e.target.value) }}
                 />
-                <ButtonSubmit text="Оформить заказ" />
+                <ButtonSubmit text="Оформить заказ" isValid={true} />
             </form>
         </>
     )

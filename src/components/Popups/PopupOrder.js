@@ -16,17 +16,16 @@ const PopupOrder = () => {
     const block = params?.block;
     const navigate = useNavigate();
     const [orderData, setOrderData] = useState({})
+    const [dataForConfirm, setDataForConfirm] = useState([])
 
     function validForm (form) {
         if (form.tagName !== 'FORM') return false;
         return ![...form.elements].some(element => element.validity.valid !== true);
     }
     useEffect(() => {
-        console.log(orderData, cart);
+        console.log(dataForConfirm, cart);
 
-    }, [orderData])
-
-
+    }, [dataForConfirm])
 
     function handleInput (event) {
         const name = event.target.name;
@@ -43,11 +42,24 @@ const PopupOrder = () => {
     function handleSubmitFormDelivery (event) {
         event.preventDefault();
         saveLocalStorage();
+        const { cost, quantity, costDelivery } = costOrder(orderData?.sposob);
+        let dataForConfirm = [
+            `Имя: ${orderData.userName}`,
+            `Телефон: ${orderData.phone}`,
+            `Заказ: ${quantity} шт.за ${cost} ₽`,
+            `Способ доставки: ${orderData.sposob}`,
+        ]
+
+        if (costDelivery !== 0) dataForConfirm = [...dataForConfirm, `Стоимость доставки: ${costDelivery}₽`];
+        dataForConfirm = [...dataForConfirm,
+        `Адрес: ${orderData?.address}`,
+        `Всего к оплате: ${cost + costDelivery}₽`,
+        ]
+        setDataForConfirm(dataForConfirm);
         navigate('/order/confirm', { replace: false })
     }
-    function handleSubmitFormConfirm (event) {
-        event.preventDefault();
-
+    function handleSubmitFormConfirm (comment) {
+        setDataForConfirm([...dataForConfirm, `Комментарий: ${comment}`])
     }
     function handleClickNavBack () {
         navigate(-1)
@@ -88,7 +100,7 @@ const PopupOrder = () => {
                 {block === "confirm" &&
                     (<div className="form_confirm-block">
                         <ButtonGoBack onClick={handleClickNavBack} />
-                        <FormConfirm onSubmit={handleSubmitFormConfirm} cartData={cart} orderData={orderData} costOrder={costOrder} />
+                        <FormConfirm onSubmit={handleSubmitFormConfirm} dataForConfirm={dataForConfirm} />
                     </div>)
                 }
             </div>
