@@ -9,7 +9,8 @@
   overflow: hidden;
   cursor: pointer;
   user-select: none;
-  transition-property: background-color, color;
+  transition-property: background-color,
+    color;
   transition-duration: 200ms;
   transition-timing-function: ease-out;
   min-width: 100px;
@@ -19,6 +20,8 @@
   background-color: #ffe6007e;
   color: #d15700;
   margin-left: 20px;
+  display: inline-block;
+  width: fit-content;
 }
 .product__button:hover {
   background-color: #eed603;
@@ -29,6 +32,5 @@
     margin-left: 0px;
     font-size: 14px;
     line-height: 16px;
-  
   }
 }

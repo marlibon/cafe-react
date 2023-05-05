@@ -1,0 +1,15 @@
+.loading {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  color: black;
+  height: 100vh;
+  z-index: 9999;
+  position: absolute;
+  top: 0;
+  z-index: 9999;
+  left: 0;
+}

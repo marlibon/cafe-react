@@ -1,4 +1,3 @@
-import CloseButton from "./CloseButton"
 import Popup from "./Popup"
 
 const PopupMessage = ({ title, children, navigateOnClose }) => {

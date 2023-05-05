@@ -1,11 +1,10 @@
 import { useState } from "react";
 import ButtonSubmit from "./ButtonSubmit";
 
-const FormConfirm = ({ dataForConfirm, onSubmit }) => {
-    const [valueComment, setValueComment] = useState('')
+const FormConfirm = ({ dataForConfirm, onSubmit, onInput }) => {
     function handleSubmit (e) {
         e.preventDefault();
-        onSubmit(valueComment)
+        onSubmit()
     }
     return (
         <>
@@ -17,12 +16,11 @@ const FormConfirm = ({ dataForConfirm, onSubmit }) => {
                 <textarea
                     placeholder="Дополнительная информация"
                     type="text"
-                    id="address"
-                    minLength={8}
+                    name="comment"
                     maxLength={402}
+                    defaultValue={''}
                     className="form__input form__textarea form__input_comment"
-                    value={valueComment}
-                    onChange={(e) => { setValueComment(e.target.value) }}
+                    onChange={onInput}
                 />
                 <ButtonSubmit text="Оформить заказ" isValid={true} />
             </form>

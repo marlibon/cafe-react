@@ -172,6 +172,10 @@
 @import url('../blocks/page/__container/_image/page__container_image.css');
 @import url('../blocks/page/__content-popup/page__content-popup.css');
 
+@import url('../blocks/loading/loading.css');
+@import url('../blocks/spinner/spinner.css');
+@import url('../blocks/spinner/_visible/spinner_visible.css');
+
 /*для галочки пользовательского соглашения*/
 .container {
   display: block;

@@ -1,12 +1,14 @@
 import { useEffect, useRef, useState } from "react";
 import ButtonSubmit from "./ButtonSubmit";
-
+import Inputmask from 'inputmask';
 const FormUser = ({ orderData, onInput, onSubmit, onValid }) => {
     const [validFormUser, setValidFormUser] = useState(false);
     const refForm = useRef()
+    const inputRef = useRef(null);
+    useEffect(() => {
+        Inputmask({ mask: '+7(999)999-99-99' }).mask(inputRef.current);
+    }, []);
 
-    function handleChangeFormUser (e) {
-    }
     useEffect(() => {
         setValidFormUser(onValid(refForm.current))
     }, [orderData])
@@ -27,13 +29,14 @@ const FormUser = ({ orderData, onInput, onSubmit, onValid }) => {
             <input
                 placeholder="Телефон"
                 type="tel"
-                pattern="[0-9]*"
                 id="phone"
                 name="phone"
-                minLength={11}
-                maxLength={11}
                 className="form__input form__input_phone"
                 required
+                // minLength={11}
+                // maxLength={11}
+                pattern="\+7\([0-9]{3}\)[0-9]{3}-[0-9]{2}-[0-9]{2}"
+                ref={inputRef}
                 onChange={onInput}
                 defaultValue={orderData?.phone}
 

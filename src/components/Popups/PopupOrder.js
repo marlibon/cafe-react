@@ -1,17 +1,18 @@
 import Popup from "./Popup";
-import { NavLink, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { CartContext } from "../../contexts/CartContext";
 import useSetTitle from "../../hooks/useSetTitle";
 import { useContext, useEffect, useState } from "react";
+import config from "../../utils/config";
 import ButtonGoBack from "../elements/ButtonGoBack";
 import FormDelivery from "../elements/FormDelivery";
 import FormUser from "../elements/FormUser";
-import config from "../../utils/config";
 import FormConfirm from "../elements/FormConfirm";
+import sendOrder from "../../utils/sendOrder";
 
 const PopupOrder = () => {
     useSetTitle('Оформление заказа');
-    const { cart } = useContext(CartContext)
+    const { cart, setCart } = useContext(CartContext)
     const params = useParams()
     const block = params?.block;
     const navigate = useNavigate();
@@ -23,10 +24,10 @@ const PopupOrder = () => {
         return ![...form.elements].some(element => element.validity.valid !== true);
     }
     useEffect(() => {
-        console.log(dataForConfirm, cart);
-
-    }, [dataForConfirm])
-
+        const { userName, phone, sposob, address } = orderData;
+        if (!sposob && !address) navigate('/order/delivery', { replace: false })
+        if (!userName && !phone) navigate('/order/user', { replace: false })
+    }, [])
     function handleInput (event) {
         const name = event.target.name;
         setOrderData({ ...orderData, [name]: event.target.value })
@@ -58,8 +59,18 @@ const PopupOrder = () => {
         setDataForConfirm(dataForConfirm);
         navigate('/order/confirm', { replace: false })
     }
-    function handleSubmitFormConfirm (comment) {
-        setDataForConfirm([...dataForConfirm, `Комментарий: ${comment}`])
+    function handleSubmitFormConfirm (comment = '') {
+        const orderText = [...dataForConfirm, `Комментарий: ${orderData.comment ? orderData.comment : ''}`]
+        const orderCompleted = () => {
+            navigate('/completed', { replace: false });
+            setOrderData({});
+            setCart([])
+            localStorage.removeItem("cart");
+        }
+        const orderNotCompleted = () => {
+            navigate('/non-completed', { replace: false })
+        }
+        sendOrder({ orderText, orderData, cart, orderCompleted, orderNotCompleted })
     }
     function handleClickNavBack () {
         navigate(-1)
@@ -71,9 +82,9 @@ const PopupOrder = () => {
         let { freeDeliverySum, deliveryCost } = config;
         cart.forEach((item) => { cost += item.cost * item.quantity; });
 
-        if (cost >= freeDeliverySum && sposob == 'доставка') {
+        if (cost >= freeDeliverySum && sposob === 'доставка') {
             costDelivery = 0;
-        } else if (cost < freeDeliverySum && sposob == 'доставка') {
+        } else if (cost < freeDeliverySum && sposob === 'доставка') {
             costDelivery = deliveryCost;
         }
         else {
@@ -87,7 +98,7 @@ const PopupOrder = () => {
                 <h3 className="order__title">Оформление заказа</h3>
                 {block === "user" &&
                     (<div className="form_user-block">
-                        <ButtonGoBack onClick={handleClickNavBack} />
+                        <ButtonGoBack onClick={() => navigate('/cart', { replace: false })} />
                         <FormUser onSubmit={handleSubmitFormUser} orderData={orderData} onInput={handleInput} onValid={validForm} />
                     </div>)
                 }
@@ -100,7 +111,7 @@ const PopupOrder = () => {
                 {block === "confirm" &&
                     (<div className="form_confirm-block">
                         <ButtonGoBack onClick={handleClickNavBack} />
-                        <FormConfirm onSubmit={handleSubmitFormConfirm} dataForConfirm={dataForConfirm} />
+                        <FormConfirm onSubmit={handleSubmitFormConfirm} onInput={handleInput} dataForConfirm={dataForConfirm} />
                     </div>)
                 }
             </div>

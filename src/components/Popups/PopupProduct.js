@@ -63,13 +63,8 @@ const PopupProduct = () => {
         })
     }, [sumSupplements, nameSupplements, totalPrice, quantity])
 
-    useEffect(() => {
-        console.log(cart);
-    }, [cart])
-
     function addCart () {
         const newCart = addItem(cart, selectedProduct)
-        console.log(newCart);
         localStorage.setItem("cart", JSON.stringify(newCart));
         setCart(newCart);
         navigate('/added', { replace: false })

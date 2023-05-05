@@ -2,9 +2,9 @@ import useSetTitle from "../../hooks/useSetTitle"
 import config from "../../utils/config"
 import dataImageList from "../../utils/dataImageList"
 import SliderImages from "../SliderImages"
-import PopupPage from "./PopupPage"
+import PopupPage from "../Popups/PopupPage"
 
-const PopupContacts = () => {
+const Contacts = () => {
     useSetTitle('Контакты')
 
     return (
@@ -26,4 +26,4 @@ const PopupContacts = () => {
         </PopupPage >
     )
 }
-export default PopupContacts
+export default Contacts

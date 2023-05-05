@@ -11,11 +11,11 @@ function useFilterProducts (initialProperty = '', initialValue = '') {
         setProductsList(filteredProducts)
     }, [type, value])
 
-    const handleChange = (newType, newValue) => {
+    const handleFilter = (newType, newValue) => {
         setType(newType);
         setValue(newValue);
     }
-    return { productsList, handleChange };
+    return { productsList, handleFilter };
 }
 
 export default useFilterProducts

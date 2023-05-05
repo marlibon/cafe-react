@@ -26,7 +26,6 @@ const FormDelivery = ({ orderData, onInput, onSubmit, onValid }) => {
                         required="required"
                         onChange={handleChange}
                         value="самовывоз"
-                        checked={delivery === 'самовывоз'}
                     />
                     <span className="input-radio_text">самовывоз</span>
                 </label>
@@ -39,7 +38,6 @@ const FormDelivery = ({ orderData, onInput, onSubmit, onValid }) => {
                         value="доставка"
                         required="required"
                         onChange={handleChange}
-                        checked={delivery === 'доставка'}
 
                     />
                     <span className="input-radio_text">доставка</span>

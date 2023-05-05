@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom"
+import { Link, NavLink } from "react-router-dom"
 
 const Footer = () => {
     return (
@@ -7,9 +7,7 @@ const Footer = () => {
                 <ul className="footer__column">
                     <li>Шеф Чебурек</li>
                     <li>
-                        <a href="#" className="/terms">
-                            Пользовательское соглашение
-                        </a>
+                        <Link to="/terms" className="footer__link" >Пользовательское соглашение</Link>
                     </li>
                     <li>
                         <a href="#" className="footer__link">

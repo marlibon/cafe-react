@@ -8,6 +8,10 @@
   top: 0px;
   transition: top 150ms ease-out 0s; /* анимацию сделать */
   grid-area: img;
+  background-size: 80%;
+  background-position: center;
+  color: transparent;
+  background-repeat: no-repeat;
 }
 .product__img:hover {
   top: 10px;
