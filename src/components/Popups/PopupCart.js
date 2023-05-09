@@ -1,4 +1,3 @@
-import CloseButton from "./CloseButton";
 import Popup from "./Popup";
 import imageCartEmpty from "../../images/cart_empty.png";
 import useSetTitle from "../../hooks/useSetTitle";
@@ -6,7 +5,7 @@ import { CartContext } from "../../contexts/CartContext";
 import { useContext, useEffect, useState } from "react";
 import { countQuantity, countCost } from "../../utils/cartFunc";
 import ProductItemTableView from "../elements/ProductItemTableView";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const PopupCart = () => {
     const { cart, setCart } = useContext(CartContext)

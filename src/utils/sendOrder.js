@@ -16,8 +16,9 @@ function sendOrder ({ orderText, orderData, cart, orderCompleted, orderNotComple
     orderData["date"] = currentDate;
     const text = textForTelegram({ orderText, currentDate, cart, number: 1, })
     console.log(text);
-    api.sendTelegram(text)
+    api.sendTelegramBackend(text)
         .then((res) => {
+            console.log(res);
             if (!res) {
                 return Promise.reject(`Ошибка получения данных`);
             } else {
