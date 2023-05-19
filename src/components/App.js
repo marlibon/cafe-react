@@ -23,6 +23,7 @@ const CategoriesAndProductsList = lazy(() => import('./CategoriesAndProductsList
 const ProductPopular = lazy(() => import('./ProductPopular'));
 const PopupCart = lazy(() => import('./Popups/PopupCart'));
 const PopupOrder = lazy(() => import('./Popups/PopupOrder'));
+const PopupOrders = lazy(() => import('./Popups/PopupOrders'));
 const Header = lazy(() => import('./Header'));
 const PopupProduct = lazy(() => import('./Popups/PopupProduct'));
 const Contacts = lazy(() => import("./Pages/Contacts"));
@@ -71,6 +72,7 @@ function App () {
             <Route exact path="/image/:id" element={<PopupImage />} />
             <Route exact path="/cart" element={<PopupCart />} />
             <Route exact path="/order/:block" element={<PopupOrder />} />
+            <Route exact path="/orders" element={<PopupOrders />} />
             <Route exact path="/added" element={<Added />} />
             <Route exact path="/completed" element={<Completed />} />
             <Route exact path="/non-completed" element={<NonCompleted />} />
