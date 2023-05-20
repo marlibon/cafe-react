@@ -10,8 +10,13 @@ const config = {
         startWorkMinute: '00',
         endWorkHour: '22',
         endWorkMinute: '00',
+        endWorkHourFinishOrders: '21',
+        endWorkMinuteFinishOrders: '30',
         text: function () {
             return `${this.startWorkHour}:${this.startWorkMinute}-${this.endWorkHour}:${this.endWorkMinute}`
+        },
+        textEndTime: function () {
+            return `${this.endWorkHourFinishOrders}:${this.endWorkMinuteFinishOrders}`
         },
     },
     freeDeliverySum: 700,

@@ -16,8 +16,9 @@ const OperatingMode = ({ isOpen, onOpen }) => {
                 <button className="popup__close" onClick={handleClick} ></button>
                 <div className="message">
                     <h3 className="message__title">Упс! Мы сейчас закрыты!</h3>
-                    <p>Наше рабочее время {config.operatingMode.text()}, но вы можете оформить заказ сейчас.</p>
-                    <p>Пожалуйста, имейте ввиду, что исполнение заказов начнется только через {statusWorking}</p>
+                    <p>Наше рабочее время {config.operatingMode.text()}, а заказы на текущий день принимаем до {config.operatingMode.textEndTime()}.</p>
+                    <p>Заказы, оформленные после {config.operatingMode.textEndTime()} будут исполнены на следующий рабочий день.</p>
+                    <p>До начала исполнения заказов осталось {statusWorking}</p>
                 </div>
             </div>
         </section>
