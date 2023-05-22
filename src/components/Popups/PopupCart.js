@@ -41,27 +41,27 @@ const PopupCart = () => {
                 {quantityAll ? (
                     <>
                         <h3 className="cart__title">{`Ваша корзина (${quantityAll})`}</h3>
-                        <article className="cart__line cart__line_main">
-                            <p className="cart__product-text cart__product-text_small">товар</p>
-                            <p className="cart__product-text cart__product-text_small">
+                        <article className="table__line table__line_main">
+                            <p className="table__product-text table__product-text_small">товар</p>
+                            <p className="table__product-text table__product-text_small">
                                 цена за ед.
                             </p>
-                            <p className="cart__product-text cart__product-text_small">
+                            <p className="table__product-text table__product-text_small">
                                 количество
                             </p>
-                            <p className="cart__product-text cart__product-text_small">
+                            <p className="table__product-text table__product-text_small">
                                 стоимость
                             </p>
-                            <p className="cart__product-text cart__product-text_small">удалить</p>
+                            <p className="table__product-text table__product-text_small">удалить</p>
                         </article>
-                        <div className="cart__table">
+                        <div className="table__table">
                             {cart.map((item, index) => <ProductItemTableView product={item} onQuantity={handleQuantity} onDelete={handleDelete} key={index} />)}
                         </div>
-                        <summary className="cart__line cart__line_total">
-                            <p className="cart__product-text cart__product-text_small ">
+                        <summary className="table__line table__line_total">
+                            <p className="table__product-text table__product-text_small ">
                                 всего на сумму:
                             </p>
-                            <p className="cart__product-text cart__product-text_big">{costAll} руб.</p>
+                            <p className="table__product-text table__product-text_big">{costAll} руб.</p>
                             <button type="reset" className="cart__clear-btn" onClick={handleClearCart}>
                                 Очистить
                             </button>

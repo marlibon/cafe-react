@@ -1,7 +1,0 @@
-.cart__product-text_quontity {
-}
-@media screen and (max-width: 768px) {
-  .cart__product-text_quontity {
-    grid-area: quantity;
-  }
-}

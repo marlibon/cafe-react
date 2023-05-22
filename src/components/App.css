@@ -124,29 +124,29 @@
 
 @import url('../blocks/cart/cart.css');
 @import url('../blocks/cart/__title/cart__title.css');
-@import url('../blocks/cart/__line/cart__line.css');
-@import url('../blocks/cart/__line/_main/cart__line_main.css');
-@import url('../blocks/cart/__line/_total/cart__line_total.css');
-@import url('../blocks/cart/__line/_visible/cart__line_visible.css');
-@import url('../blocks/cart/__line-product/cart__line-product.css');
-@import url('../blocks/cart/__product-img/cart__product-img.css');
-@import url('../blocks/cart/__product-title/cart__product-title.css');
-@import url('../blocks/cart/__product-weight/cart__product-weight.css');
 @import url('../blocks/cart/__product-description/cart__product-description.css');
-@import url('../blocks/cart/__product-text/cart__product-text.css');
-@import url('../blocks/cart/__product-text/_small/cart__product-text_small.css');
-@import url('../blocks/cart/__product-text/_big/cart__product-text_big.css');
-@import url('../blocks/cart/__product-text/_price/cart__product-text_price.css');
-@import url('../blocks/cart/__product-text/_cost/cart__product-text_cost.css');
-@import url('../blocks/cart/__product-text/_quontity/cart__product-text_quontity.css');
 @import url('../blocks/cart/__product-cost/cart__product-cost.css');
-@import url('../blocks/cart/__product-trash/cart__product-trash.css');
 @import url('../blocks/cart/__clear-btn/cart__clear-btn.css');
 @import url('../blocks/cart/__order-btn/cart__order-btn.css');
 @import url('../blocks/cart/__empty/cart__empty.css');
-
 @import url('../blocks/cart/__container/cart__container.css');
-@import url('../blocks/cart/__table/cart__table.css');
+
+@import url('../blocks/table/__line/table__line.css');
+@import url('../blocks/table/__line/_main/table__line_main.css');
+@import url('../blocks/table/__line/_total/table__line_total.css');
+@import url('../blocks/table/__line/_visible/table__line_visible.css');
+@import url('../blocks/table/__line-product/table__line-product.css');
+@import url('../blocks/table/__product-img/table__product-img.css');
+@import url('../blocks/table/__product-title/table__product-title.css');
+@import url('../blocks/table/__product-weight/table__product-weight.css');
+@import url('../blocks/table/__product-text/table__product-text.css');
+@import url('../blocks/table/__product-text/_small/table__product-text_small.css');
+@import url('../blocks/table/__product-text/_big/table__product-text_big.css');
+@import url('../blocks/table/__product-text/_price/table__product-text_price.css');
+@import url('../blocks/table/__product-text/_cost/table__product-text_cost.css');
+@import url('../blocks/table/__product-text/_quontity/table__product-text_quontity.css');
+@import url('../blocks/table/__product-trash/table__product-trash.css');
+@import url('../blocks/table/__table/table__table.css');
 
 @import url('../blocks/form/form.css');
 @import url('../blocks/form/__description/form__description.css');

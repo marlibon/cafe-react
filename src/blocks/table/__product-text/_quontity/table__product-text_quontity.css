@@ -1,0 +1,7 @@
+.table__product-text_quontity {
+}
+@media screen and (max-width: 768px) {
+  .table__product-text_quontity {
+    grid-area: quantity;
+  }
+}
